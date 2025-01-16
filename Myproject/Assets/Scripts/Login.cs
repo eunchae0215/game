@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using System.Collections;
 
 
+
 public class LoginManager : MonoBehaviour
 {
     [Tooltip("아이디 입력 필드")]
