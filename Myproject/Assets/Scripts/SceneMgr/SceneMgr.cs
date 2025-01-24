@@ -14,7 +14,7 @@ public partial class SceneMgr : MonoBehaviour
     {
         Shared.SceneMgr = this;
         DontDestroyOnLoad(this);
-        Shared.InitTableMgr();
+        //Shared.InitTableMgr(); 나중에 넣어야 함함
     }
 
     // Start is called before the first frame update
