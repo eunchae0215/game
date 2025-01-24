@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking; // 서버와 통신을 위한 네임스페이스
+using System.Collections;
+
 
 public class SignManager : MonoBehaviour
 {
