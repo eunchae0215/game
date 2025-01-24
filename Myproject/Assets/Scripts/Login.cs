@@ -83,9 +83,9 @@ public class LoginManager : MonoBehaviour
                     _loginText.color = Color.green;
                     _loginText.gameObject.SetActive(true);
 
-                    // 로그인 성공 후 메인 씬으로 이동
-                    yield return new WaitForSeconds(2f);
-                    SceneManager.LoadScene("Main"); // "Main" 씬으로 이동
+                    // 로그인 성공 후 로딩씬으로 이동
+                    yield return new WaitForSeconds(2f); // 잠시 성공 메시지 표시
+                    SceneManager.LoadScene("Loading");
                 }
                 else
                 {
