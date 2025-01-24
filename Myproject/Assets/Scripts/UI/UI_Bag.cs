@@ -3,13 +3,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 가방(UI) 관리 클래스
+/// 가방(UI) 관리 클래스 - Scroll View 적용
 /// </summary>
 public class UI_Bag : UI_Base
 {
     [Header("UI Elements")]
-    [Tooltip("아이템이 배치될 부모 오브젝트")]
-    public Transform TRPOS;
+    [Tooltip("아이템이 배치될 부모 오브젝트 (Scroll View Content)")]
+    public Transform TRPOS;  // Scroll View의 Content에 해당
+
+    [Tooltip("아이템 프리팹")]
+    public GameObject itemPrefab;
 
     [Header("Inventory Settings")]
     [Tooltip("인벤토리 아이템 개수")]
@@ -23,11 +26,11 @@ public class UI_Bag : UI_Base
     private void Awake()
     {
         base.SetEnQueue();
-        Debug.Log("UI_Bag이(가) 초기화되었습니다.");
+        Debug.Log("UI_Bag 초기화 완료.");
     }
 
     /// <summary>
-    /// 인벤토리 아이템 생성 및 배치
+    /// 인벤토리 아이템 불러오기
     /// </summary>
     private void Start()
     {
@@ -35,41 +38,36 @@ public class UI_Bag : UI_Base
     }
 
     /// <summary>
-    /// 아이템을 로드하여 인벤토리에 추가
+    /// 아이템을 스크롤 뷰에 동적으로 추가
     /// </summary>
     private void LoadInventoryItems()
     {
         if (TRPOS == null)
         {
-            Debug.LogError("TRPOS가 할당되지 않았습니다. Unity 인스펙터에서 설정하세요.");
+            Debug.LogError("TRPOS(Content)가 할당되지 않았습니다. Unity 인스펙터에서 설정하세요.");
             return;
         }
 
+        if (itemPrefab == null)
+        {
+            Debug.LogError("아이템 프리팹이 설정되지 않았습니다.");
+            return;
+        }
+
+        // 기존 아이템이 있으면 삭제
+        foreach (Transform child in TRPOS)
+        {
+            Destroy(child.gameObject);
+        }
+
+        IEMap.Clear(); // 기존 아이템 데이터 초기화
+
         for (int i = 0; i < InvenCount; ++i)
         {
-            // 프리팹 로드
-            UnityEngine.Object obj = Resources.Load("Prefabs/Element/ItemElement");
+            GameObject gobj = Instantiate(itemPrefab, TRPOS);
+            gobj.transform.localScale = Vector3.one;  // 스케일 초기화
 
-            if (obj == null)
-            {
-                Debug.LogError("ItemElement 프리팹을 찾을 수 없습니다. 경로를 확인하세요.");
-                return;
-            }
-
-            // 프리팹 인스턴스 생성
-            GameObject gobj = Instantiate(obj, Vector3.zero, Quaternion.identity) as GameObject;
-
-            if (gobj == null)
-            {
-                Debug.LogError("아이템 프리팹 인스턴스를 생성할 수 없습니다.");
-                return;
-            }
-
-            gobj.transform.SetParent(TRPOS, false);  // 부모 설정 및 로컬 위치 유지
-
-            // 아이템 요소 할당
             ItemElement ie = gobj.GetComponent<ItemElement>();
-
             if (ie == null)
             {
                 Debug.LogError("ItemElement 컴포넌트를 찾을 수 없습니다.");
@@ -77,13 +75,24 @@ public class UI_Bag : UI_Base
             }
 
             // 아이템 레벨 및 수량 무작위 설정
-            ie.TEXTLEVEL.text = Random.Range(1, 100).ToString();
-            ie.TEXTCOUNT.text = Random.Range(1, 100000).ToString();
+            int randomLevel = Random.Range(1, 100);
+            int randomCount = Random.Range(1, 100000);
 
-            // 아이템을 Dictionary에 추가
+            ie.SetItemInfo($"아이템 {i}", null, randomLevel, randomCount);
+
             IEMap.Add(i, ie);
-            Debug.Log($"아이템 {i} 추가됨: Level={ie.TEXTLEVEL.text}, Count={ie.TEXTCOUNT.text}");
+            Debug.Log($"아이템 {i} 추가됨: Level={randomLevel}, Count={randomCount}");
         }
+
+        UpdateScrollViewSize();
+    }
+
+    /// <summary>
+    /// Scroll View의 Content 크기 업데이트
+    /// </summary>
+    private void UpdateScrollViewSize()
+    {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(TRPOS.GetComponent<RectTransform>());
     }
 
     /// <summary>
@@ -92,6 +101,6 @@ public class UI_Bag : UI_Base
     public override void OnBtnBack()
     {
         gameObject.SetActive(false);
-        Debug.Log("UI_Bag이(가) 비활성화되었습니다.");
+        Debug.Log("UI_Bag 비활성화됨.");
     }
 }
