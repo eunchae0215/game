@@ -12,13 +12,13 @@ public static class Shared
     /// <summary>
     /*public static Zone Zone;           // 게임 존(맵) 관리 매니저
     /// </summary>
-    public static BattleMgr BattleMgr; // 전투 시스템 관리 매니저
+    public static BattleMgr BattleMgr; // 전투 시스템 관리 매니저 */
 
     // UI 관리 큐 (대기 중인 UI 작업을 관리)
     public static Queue<UI_Base> QueUI = new Queue<UI_Base>();
 
     // 테이블 매니저 (데이터 초기화 및 접근)
-    public static Tabel_Mgr TabelMgr;
+    /*public static Tabel_Mgr TabelMgr;
 
     /// <summary>
     /// TableMgr가 존재하지 않으면 초기화

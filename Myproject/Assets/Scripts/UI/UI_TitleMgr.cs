@@ -3,21 +3,11 @@ using UnityEngine.UI;
 
 public class UI_TitleMgr : MonoBehaviour
 {
-    // Unity UI 버튼
-    [Header("UI Components")]
-    public Button titleButton;
+
 
     void Start()
     {
-        // 버튼 클릭 이벤트 등록
-        if (titleButton != null)
-        {
-            titleButton.onClick.AddListener(OnBtnTitle);
-        }
-        else
-        {
-            Debug.LogError("titleButton이 할당되지 않았습니다.");
-        }
+     
     }
 
     void Update()
