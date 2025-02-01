@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MoveScene1 : MonoBehaviour
+public class MoveScene2 : MonoBehaviour
 {
-    public string sceneName = "SkillButton1";
+    public string sceneName = "SkillButton2";
 
     public void ChangeScene()
     {
