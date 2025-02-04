@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sign_new.unity
     guid: 8dd148a7992b6f042861251f7552ec7b
   - enabled: 1
-    path: Assets/Scenes/Login_new.unity
+    path: Assets/Scenes/Login.unity
     guid: 976f3b58fda32674fb9f3e8a61a68770
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

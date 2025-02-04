@@ -9,5 +9,7 @@ public class SignChange : MonoBehaviour
     {
         SceneManager.LoadScene("Sign_new");
 
+        Debug.LogError("잘못된 씬 요청: " );
+
     }
 }

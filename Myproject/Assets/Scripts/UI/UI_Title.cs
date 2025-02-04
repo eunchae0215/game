@@ -88,4 +88,6 @@ public class UI_Title : MonoBehaviour
         Debug.Log("OnBtnOption 버튼 클릭");
         OptionPanel.SetActive(true);
     }
+
+    
 }
