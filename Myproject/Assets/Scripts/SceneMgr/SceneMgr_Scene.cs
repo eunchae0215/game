@@ -82,7 +82,7 @@ public partial class SceneMgr : MonoBehaviour
         switch (scene)
         {
             case eSCENE.eSCENE_TITLE: return "Title";
-            case eSCENE.eSCENE_LOGIN: return "Login";
+            case eSCENE.eSCENE_LOGIN: return "Login_new";
             case eSCENE.eSCENE_LOBBY: return "Lobby";
             case eSCENE.eSCENE_BATTLE: return "Battle";
             default: return string.Empty;
