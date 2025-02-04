@@ -8,7 +8,7 @@ public class MoveScene1 : MonoBehaviour
 
     public void ChangeScene()
     {
-        Debug.Log("버튼 클릭됨! 씬 이동: " + sceneName); // 클릭 로그 추가
+       
         SceneManager.LoadScene(sceneName);
     }
 }
