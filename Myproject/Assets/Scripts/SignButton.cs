@@ -7,7 +7,7 @@ public class LoginChange : MonoBehaviour
 {
     public void LoginSceneChange()
     {
-        SceneManager.LoadScene("Login_new");
+        SceneManager.LoadScene("Login");
 
     }
 }
