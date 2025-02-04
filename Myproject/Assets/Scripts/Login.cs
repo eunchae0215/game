@@ -24,7 +24,6 @@ public class LoginManager : MonoBehaviour
 
     void Start()
     {
-        _loginText.gameObject.SetActive(false);
 
         // 버튼 클릭 이벤트 추가
         _loginButton.onClick.AddListener(Login);
