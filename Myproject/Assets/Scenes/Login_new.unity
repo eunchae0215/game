@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1041834545}
         m_TargetAssemblyTypeName: LogintoStartChange, Assembly-CSharp
         m_MethodName: LogintoStartSceneChange
         m_Mode: 1
