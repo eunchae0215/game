@@ -7,7 +7,7 @@ public class SignChange : MonoBehaviour
 {
     public void SignSceneChange()
     {
-        SceneManager.LoadScene("Sign_new");
+        SceneManager.LoadScene("Sign");
 
     }
 }
