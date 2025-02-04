@@ -24,6 +24,7 @@ public class LoginManager : MonoBehaviour
 
     void Start()
     {
+        
 
         // 버튼 클릭 이벤트 추가
         _loginButton.onClick.AddListener(Login);
@@ -41,7 +42,7 @@ public class LoginManager : MonoBehaviour
             _loginText.gameObject.SetActive(true);
             return;  // 유효성 검사를 통과하지 않으면 함수 종료
         }
-
+        
         // 서버에 로그인 요청
         StartCoroutine(LoginRequest(_idInput.text, _passwordInput.text));
     }

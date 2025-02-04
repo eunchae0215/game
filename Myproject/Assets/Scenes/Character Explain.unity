@@ -712,6 +712,10 @@ GameObject:
   - component: {fileID: 446710346}
   - component: {fileID: 446710345}
   - component: {fileID: 446710344}
+  - component: {fileID: 446710352}
+  - component: {fileID: 446710351}
+  - component: {fileID: 446710350}
+  - component: {fileID: 446710349}
   - component: {fileID: 446710348}
   m_Layer: 5
   m_Name: Canvas
@@ -816,6 +820,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067134fa2ae15fc4488a5afed77f44b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &446710349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446710343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d43aec69b681445ba0cacbc672714c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton1
+--- !u!114 &446710350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446710343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bb4233f84f384ea54f9c785424a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton2
+--- !u!114 &446710351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446710343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e602cbb654e43b41bd2e2498f733800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton3
+--- !u!114 &446710352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446710343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8204e9697d5bf7459f43c04c0f9f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton4
 --- !u!1 &460643777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1367,7 @@ GameObject:
   - component: {fileID: 975164436}
   - component: {fileID: 975164435}
   - component: {fileID: 975164434}
+  - component: {fileID: 975164438}
   - component: {fileID: 975164437}
   m_Layer: 5
   m_Name: Button (3)
@@ -1383,7 +1440,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 975164435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 975164438}
+        m_TargetAssemblyTypeName: MoveScene4, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &975164435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1504,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &975164438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975164432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8204e9697d5bf7459f43c04c0f9f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton4
 --- !u!1 &1028567006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1529,7 @@ GameObject:
   - component: {fileID: 1028567010}
   - component: {fileID: 1028567009}
   - component: {fileID: 1028567008}
+  - component: {fileID: 1028567012}
   - component: {fileID: 1028567011}
   m_Layer: 5
   m_Name: Button (2)
@@ -1519,7 +1602,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1028567009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1028567012}
+        m_TargetAssemblyTypeName: MoveScene3, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1028567009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1666,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &1028567012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028567006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e602cbb654e43b41bd2e2498f733800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton3
 --- !u!1 &1049399291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2313,7 @@ GameObject:
   - component: {fileID: 1589673476}
   - component: {fileID: 1589673475}
   - component: {fileID: 1589673474}
+  - component: {fileID: 1589673478}
   - component: {fileID: 1589673477}
   m_Layer: 5
   m_Name: Button (1)
@@ -2277,7 +2386,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1589673475}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589673478}
+        m_TargetAssemblyTypeName: MoveScene2, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1589673475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2450,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &1589673478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589673472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bb4233f84f384ea54f9c785424a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SkillButton2
 --- !u!1 &1673296248
 GameObject:
   m_ObjectHideFlags: 0
