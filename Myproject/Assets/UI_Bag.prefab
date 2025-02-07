@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TRPOS: {fileID: 4015835000678359400}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2818194203331714604}
   InvenCount: 10
 --- !u!1 &4213132169091812991
 GameObject:
@@ -534,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.000030517578}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0.00001495541}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &5774709229951645692
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4535831713470588714}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999773
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
