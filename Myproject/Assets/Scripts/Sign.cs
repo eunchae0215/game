@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking; // 서버와 통신을 위한 네임스페이스
 using System.Collections;
 
-
 public class SignManager : MonoBehaviour
 {
+    [Tooltip("닉네임 입력 필드")]
+    [SerializeField] private InputField _nicknameInput;
+
     [Tooltip("아이디 입력 필드")]
     [SerializeField] private InputField _idInput;
 
@@ -30,24 +32,27 @@ public class SignManager : MonoBehaviour
     /// <summary>회원가입 함수</summary>
     private void SignUp()
     {
-        // 유효성 검사: 아이디와 비밀번호 입력 확인
-        if (string.IsNullOrEmpty(_idInput.text) || string.IsNullOrEmpty(_passwordInput.text))
+        // 유효성 검사: 닉네임, 아이디, 비밀번호 입력 확인
+        if (string.IsNullOrEmpty(_nicknameInput.text) ||
+            string.IsNullOrEmpty(_idInput.text) ||
+            string.IsNullOrEmpty(_passwordInput.text))
         {
-            _signupText.text = "아이디 또는 비밀번호를 입력하세요.";
+            _signupText.text = "닉네임, 아이디, 비밀번호를 모두 입력하세요.";
             _signupText.color = Color.red;
             _signupText.gameObject.SetActive(true);
             return;  // 유효성 검사를 통과하지 않으면 함수 종료
         }
 
         // 서버와 통신하여 회원가입 요청
-        StartCoroutine(SignUpRequest(_idInput.text, _passwordInput.text));
+        StartCoroutine(SignUpRequest(_nicknameInput.text, _idInput.text, _passwordInput.text));
     }
 
     /// <summary>회원가입 요청을 서버에 보냄</summary>
-    private IEnumerator SignUpRequest(string username, string password)
+    private IEnumerator SignUpRequest(string nickname, string id, string password)
     {
         // JSON 데이터 생성
-        string json = JsonUtility.ToJson(new { username = username, password = password });
+        // 서버 코드에서 { id, password, nickname } 형태로 받는다고 가정
+        string json = JsonUtility.ToJson(new { id = id, password = password, nickname = nickname });
 
         // HTTP POST 요청 생성
         using (UnityWebRequest request = new UnityWebRequest("http://localhost:3000/register", "POST"))
@@ -65,7 +70,7 @@ public class SignManager : MonoBehaviour
             {
                 Debug.Log("회원가입 응답: " + request.downloadHandler.text);
 
-                // 서버 응답에서 성공 여부 확인
+                // 서버 응답에서 success 여부 확인
                 if (request.downloadHandler.text.Contains("\"success\":true"))
                 {
                     _signupText.text = "회원가입 성공! 로그인 화면으로 이동합니다.";
@@ -78,7 +83,7 @@ public class SignManager : MonoBehaviour
                 }
                 else
                 {
-                    _signupText.text = "회원가입 실패: 중복된 아이디입니다.";
+                    _signupText.text = "회원가입 실패: 이미 존재하는 아이디이거나 서버 오류.";
                     _signupText.color = Color.red;
                     _signupText.gameObject.SetActive(true);
                 }
