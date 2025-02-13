@@ -37,7 +37,7 @@ public class LoginManager : MonoBehaviour
         // 유효성 검사: 아이디와 비밀번호 입력 확인
         if (string.IsNullOrEmpty(_idInput.text) || string.IsNullOrEmpty(_passwordInput.text))
         {
-            _loginText.text = "아이디 또는 비밀번호를 입력하시오오.";
+            _loginText.text = "아이디 또는 비밀번호를 입력하세요.";
             _loginText.color = Color.red;
             _loginText.gameObject.SetActive(true);
             return;  // 유효성 검사를 통과하지 않으면 함수 종료
