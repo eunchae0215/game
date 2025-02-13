@@ -1909,7 +1909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idInput: {fileID: 0}
   _passwordInput: {fileID: 0}
-  _signupButton: {fileID: 0}
+  _signupButton: {fileID: 574959472}
   _signupText: {fileID: 0}
 --- !u!114 &1557783703
 MonoBehaviour:
