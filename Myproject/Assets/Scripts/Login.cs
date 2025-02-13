@@ -3,15 +3,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System.Collections;
+using TMPro; // TextMeshPro를 사용하기 위해 필요
 
 
 public class LoginManager : MonoBehaviour
 {
+
     [Tooltip("아이디 입력 필드")]
-    [SerializeField] private InputField _idInput;
+    [SerializeField] private TMP_InputField _idInput;
 
     [Tooltip("비밀번호 입력 필드")]
-    [SerializeField] private InputField _passwordInput;
+    [SerializeField] private TMP_InputField _passwordInput;
 
     [Tooltip("로그인 버튼")]
     [SerializeField] private Button _loginButton;
@@ -20,11 +22,11 @@ public class LoginManager : MonoBehaviour
     [SerializeField] private Button _signupButton;
 
     [Tooltip("로그인 성공/실패 텍스트")]
-    [SerializeField] private Text _loginText;
+    [SerializeField] private TMP_Text _loginText;
 
     void Start()
     {
-        _loginText.gameObject.SetActive(false);
+        
 
         // 버튼 클릭 이벤트 추가
         _loginButton.onClick.AddListener(Login);
@@ -42,7 +44,7 @@ public class LoginManager : MonoBehaviour
             _loginText.gameObject.SetActive(true);
             return;  // 유효성 검사를 통과하지 않으면 함수 종료
         }
-
+        
         // 서버에 로그인 요청
         StartCoroutine(LoginRequest(_idInput.text, _passwordInput.text));
     }
@@ -82,9 +84,9 @@ public class LoginManager : MonoBehaviour
                     _loginText.color = Color.green;
                     _loginText.gameObject.SetActive(true);
 
-                    // 로그인 성공 후 메인 씬으로 이동
-                    yield return new WaitForSeconds(2f);
-                    SceneManager.LoadScene("Main"); // "Main" 씬으로 이동
+                    // 로그인 성공 후 로딩씬으로 이동
+                    yield return new WaitForSeconds(2f); // 잠시 성공 메시지 표시
+                    SceneManager.LoadScene("Loading");
                 }
                 else
                 {
