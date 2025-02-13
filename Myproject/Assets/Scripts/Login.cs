@@ -3,15 +3,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System.Collections;
+using TMPro; // TextMeshPro를 사용하기 위해 필요
 
 
 public class LoginManager : MonoBehaviour
 {
+
     [Tooltip("아이디 입력 필드")]
-    [SerializeField] private InputField _idInput;
+    [SerializeField] private TMP_InputField _idInput;
 
     [Tooltip("비밀번호 입력 필드")]
-    [SerializeField] private InputField _passwordInput;
+    [SerializeField] private TMP_InputField _passwordInput;
 
     [Tooltip("로그인 버튼")]
     [SerializeField] private Button _loginButton;
@@ -20,7 +22,7 @@ public class LoginManager : MonoBehaviour
     [SerializeField] private Button _signupButton;
 
     [Tooltip("로그인 성공/실패 텍스트")]
-    [SerializeField] private Text _loginText;
+    [SerializeField] private TMP_Text _loginText;
 
     void Start()
     {

@@ -131,9 +131,8 @@ GameObject:
   - component: {fileID: 400823860}
   - component: {fileID: 400823859}
   - component: {fileID: 400823858}
-  - component: {fileID: 400823857}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,18 +158,6 @@ RectTransform:
   m_AnchoredPosition: {x: -435, y: -419}
   m_SizeDelta: {x: 730, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &400823857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400823855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0143ff810629a4b941f546a4769b11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &400823858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 400823857}
+      - m_Target: {fileID: 613488304}
         m_TargetAssemblyTypeName: LogintoStartChange, Assembly-CSharp
         m_MethodName: LogintoStartSceneChange
         m_Mode: 1
@@ -278,7 +265,7 @@ GameObject:
   - component: {fileID: 456381319}
   - component: {fileID: 456381318}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Id_InputField (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,11 +742,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb730a48829c1a45ba4da59a8c17494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idInput: {fileID: 0}
-  _passwordInput: {fileID: 0}
+  _idInput: {fileID: 456381318}
+  _passwordInput: {fileID: 1180646878}
   _loginButton: {fileID: 400823858}
   _signupButton: {fileID: 1533156695}
-  _loginText: {fileID: 0}
+  _loginText: {fileID: 765909379}
 --- !u!114 &613488303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,8 +1221,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1299,7 +1286,7 @@ GameObject:
   - component: {fileID: 1180646879}
   - component: {fileID: 1180646878}
   m_Layer: 5
-  m_Name: InputField (TMP) (1)
+  m_Name: Pw_InputField (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,9 +1542,8 @@ GameObject:
   - component: {fileID: 1533156697}
   - component: {fileID: 1533156696}
   - component: {fileID: 1533156695}
-  - component: {fileID: 1533156694}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,18 +1569,6 @@ RectTransform:
   m_AnchoredPosition: {x: 435.00003, y: -419}
   m_SizeDelta: {x: 730, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1533156694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533156692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ef772bc39567440bf7551bfc7300cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1533156695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,7 +1613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1533156694}
+      - m_Target: {fileID: 613488303}
         m_TargetAssemblyTypeName: SignChange, Assembly-CSharp
         m_MethodName: SignSceneChange
         m_Mode: 1
@@ -2118,8 +2092,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
