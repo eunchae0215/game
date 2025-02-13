@@ -33,4 +33,6 @@ public partial class SceneMgr : MonoBehaviour
 
         Debug.Log(" OnExit ");
     }
+
+
 }
