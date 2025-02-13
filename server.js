@@ -11,45 +11,57 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB 연결
-const uri = "mongodb+srv://s2uh9yun:sh04020900@gamet.lpmyb.mongodb.net/?retryWrites=true&w=majority&appName=Gamet";
+const uri = "mongodb+srv://s2uh9yun:sh04020900@gamet.lpmyb.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri).then(() => {
     console.log("Connected to MongoDB!");
 }).catch(err => {
     console.error("Failed to connect to MongoDB:", err);
 });
 
-// 사용자 스키마 및 모델
+// 사용자 스키마 및 모델 (id, password, nickname 필드 사용)
 const userSchema = new mongoose.Schema({
-    username: String,
+    id: String,
     password: String,
-    level: Number,
-    experience: Number,
+    nickname: String
 });
 const User = mongoose.model('User', userSchema);
 
 // 회원가입 API
 app.post("/register", async (req, res) => {
-    const { username, password } = req.body;
-    const existingUser = await User.findOne({ username });
+    try {
+        const { id, password, nickname } = req.body;
 
-    if (existingUser) {
-        res.json({ success: false, message: "Username already exists" });
-    } else {
-        const user = new User({ username, password, level: 1, experience: 0 });
-        await user.save();
+        // 이미 동일 id가 있는지 확인
+        const existingUser = await User.findOne({ id });
+        if (existingUser) {
+            return res.json({ success: false, message: "User ID already exists" });
+        }
+
+        // 새 사용자 생성 (nickname 포함)
+        const newUser = new User({ id, password, nickname });
+        await newUser.save();
+
         res.json({ success: true, message: "User registered successfully!" });
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, message: "Registration failed" });
     }
 });
 
 // 로그인 API
 app.post("/login", async (req, res) => {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username, password });
+    try {
+        const { id, password } = req.body;
+        const user = await User.findOne({ id, password });
 
-    if (user) {
-        res.json({ success: true, message: "Login successful", user });
-    } else {
-        res.json({ success: false, message: "Invalid username or password" });
+        if (user) {
+            res.json({ success: true, message: "Login successful", user });
+        } else {
+            res.json({ success: false, message: "Invalid id or password" });
+        }
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, message: "Login failed" });
     }
 });
 
