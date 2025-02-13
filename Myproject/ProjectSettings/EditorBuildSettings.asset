@@ -9,11 +9,41 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: a489f23109d5afe4a8ba02987cbbe6fe
+  - enabled: 0
     path: Assets/Scenes/Sign.unity
     guid: 93a87b00745a479469bf0bcb8cb388ad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Login.unity
     guid: 4f65cb19688532d41adf986e908ff427
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 2f1670cabf9e1fe4f879489e3413157e
+  - enabled: 1
+    path: Assets/Scenes/Character Explain.unity
+    guid: 2f767a4e08af6f24aa8fa158fa206e51
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 047f20f9dbb290c418da0d52caa7de0d
+  - enabled: 1
+    path: Assets/Scenes/SkillButton1.unity
+    guid: f92032a7bd4ceb446b1a880c8ca5466c
+  - enabled: 1
+    path: Assets/Scenes/SkillButton2.unity
+    guid: 80d380214b13b9640be633e69f253ce4
+  - enabled: 1
+    path: Assets/Scenes/SkillButton3.unity
+    guid: 219a3444d4385bd48a8c709d198e7399
+  - enabled: 1
+    path: Assets/Scenes/SkillButton4.unity
+    guid: 2d9e002f4fc65494b87134e55715d035
+  - enabled: 1
+    path: Assets/Scenes/Sign_new.unity
+    guid: 8dd148a7992b6f042861251f7552ec7b
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 976f3b58fda32674fb9f3e8a61a68770
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
