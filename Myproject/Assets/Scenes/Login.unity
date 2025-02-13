@@ -757,8 +757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idInput: {fileID: 0}
   _passwordInput: {fileID: 0}
-  _loginButton: {fileID: 0}
-  _signupButton: {fileID: 0}
+  _loginButton: {fileID: 400823858}
+  _signupButton: {fileID: 1533156695}
   _loginText: {fileID: 0}
 --- !u!114 &613488303
 MonoBehaviour:
