@@ -721,8 +721,6 @@ GameObject:
   - component: {fileID: 613488306}
   - component: {fileID: 613488305}
   - component: {fileID: 613488304}
-  - component: {fileID: 613488303}
-  - component: {fileID: 613488302}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -730,35 +728,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &613488302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613488301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb730a48829c1a45ba4da59a8c17494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _idInput: {fileID: 456381318}
-  _passwordInput: {fileID: 1180646878}
-  _loginButton: {fileID: 400823858}
-  _signupButton: {fileID: 1533156695}
-  _loginText: {fileID: 765909379}
---- !u!114 &613488303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613488301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ef772bc39567440bf7551bfc7300cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &613488304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613488303}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SignChange, Assembly-CSharp
         m_MethodName: SignSceneChange
         m_Mode: 1
