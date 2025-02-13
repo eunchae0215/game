@@ -38,7 +38,7 @@ app.post("/register", async (req, res) => {
         }
 
         // 새 사용자 생성
-        const newUser = new User({ id, password, nickname });
+        const newUser = new User({ nickname, id, password });
         await newUser.save();
 
         res.json({ success: true, message: "User registered successfully!" });
