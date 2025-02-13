@@ -18,26 +18,27 @@ mongoose.connect(uri).then(() => {
     console.error("Failed to connect to MongoDB:", err);
 });
 
-// 사용자 스키마 및 모델 (id, password, nickname 필드 사용)
+// 사용자 스키마 및 모델 (nickname, id, password 순으로)
 const userSchema = new mongoose.Schema({
+    nickname: String,
     id: String,
-    password: String,
-    nickname: String
+    password: String
 });
 const User = mongoose.model('User', userSchema);
 
 // 회원가입 API
 app.post("/register", async (req, res) => {
     try {
-        const { id, password, nickname } = req.body;
-        
+        // nickname, id, password 순서로 구조 분해
+        const { nickname, id, password } = req.body;
+
         // 이미 동일 id가 있는지 확인
         const existingUser = await User.findOne({ id });
         if (existingUser) {
             return res.json({ success: false, message: "User ID already exists" });
         }
 
-        // 새 사용자 생성
+        // 새 사용자 생성 (nickname, id, password 순서)
         const newUser = new User({ nickname, id, password });
         await newUser.save();
 
