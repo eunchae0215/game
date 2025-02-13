@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sign.unity
     guid: 93a87b00745a479469bf0bcb8cb388ad
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Login.unity
-    guid: 4f65cb19688532d41adf986e908ff427
+    guid: 100c5dc7c1e065443b0cc204e6232be5
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 2f1670cabf9e1fe4f879489e3413157e
@@ -38,12 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillButton4.unity
     guid: 2d9e002f4fc65494b87134e55715d035
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sign_new.unity
     guid: 8dd148a7992b6f042861251f7552ec7b
   - enabled: 1
     path: Assets/Scenes/Login.unity
-    guid: 976f3b58fda32674fb9f3e8a61a68770
+    guid: 100c5dc7c1e065443b0cc204e6232be5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
