@@ -431,17 +431,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439e1dbe9203e64b8ec65261aca6cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingText: {fileID: 1770375418}
-  loadingImage: {fileID: 630519254}
-  loadingMessages:
+  TEXTDEC: {fileID: 1770375418}
+  IMGBG: {fileID: 630519254}
+  TEXTLIST:
   - "\uB85C\uB529\uC911111"
   - "\uB85C\uB529\uC911222"
   - "\uB85C\uB529\uC911333"
-  loadingSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  loadingDuration: 5
+  AtlasName: Common
+  SpriteNames:
+  - Loading1
+  - Loading2
+  - Loading3
 --- !u!1 &1351595077
 GameObject:
   m_ObjectHideFlags: 0
